@@ -1,6 +1,6 @@
 package com.course_project.courseapp.service;
 
-import com.course_project.courseapp.entity.CourseDocument;
+
 import com.course_project.courseapp.repository.CourseDocumentRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,6 +10,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import java.io.InputStream;
 import java.util.List;
+import com.course_project.courseapp.entity.CourseDocument ;
 
 @Component
 @RequiredArgsConstructor

@@ -9,17 +9,15 @@ import org.springframework.data.elasticsearch.annotations.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "courses")
+@Document(indexName="courses")
 public class CourseDocument {
-
     @Id
-    private long id;
+    private long id ;
 
-    @MultiField(
-            mainField = @Field(type = FieldType.Text),
-            otherFields = { @InnerField(suffix = "keyword", type = FieldType.Keyword) }
+    @MultiField(mainField = @Field(type=FieldType.Text),
+    otherFields = {@InnerField(suffix="keyword" , type=FieldType.Keyword)}
     )
-    private String title;
+    private String title ;
 
     @Field(type = FieldType.Text)
     private String description;
@@ -45,3 +43,5 @@ public class CourseDocument {
     @Field(type = FieldType.Date, pattern = "yyyy-MM-dd'T'HH:mm:ssX")
     private String nextSessionDate;
 }
+
+
