@@ -29,7 +29,6 @@ public class ElasticsearchConfig {
         return new ElasticsearchClient(transport);
     }
 
-    // Single ElasticsearchTemplate bean implementing ElasticsearchOperations
     @Bean
     public ElasticsearchTemplate elasticsearchTemplate(ElasticsearchClient client) {
         return new ElasticsearchTemplate(client);
