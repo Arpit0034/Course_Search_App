@@ -95,12 +95,12 @@ A Spring Boot application with Elasticsearch integration to provide course searc
   7. sort                     Sort by: upcoming (default), priceAsc, priceDesc
   8. page/size	              Pagination (page=0, size=10 by default)
 
-```
 Example 1: Full-text Search by Keyword
 
 Request: curl "http://localhost:8080/api/search?q=robotics"
 
 Expected Response:
+```
 {
   "total": 3,
   "courses": [
@@ -119,12 +119,14 @@ Expected Response:
   ],
   "error": null
 }
+```
 
 Example 2: Filter by Category and Age Range, Sorted by Price Ascending
 
 Request: curl "http://localhost:8080/api/search?category=Math&minAge=10&maxAge=15&sort=priceAsc&page=0&size=5"
 
 Expected Response:
+```
 {
   "total": 3,
   "courses": [
@@ -144,12 +146,13 @@ Expected Response:
   ],
   "error": null
 }
-
+```
 Example 3: Filter by Type and Price Range, Sorted by Price Descending
 
 Request: curl "http://localhost:8080/api/search?type=ONE_TIME&minPrice=70&maxPrice=100&sort=priceDesc"
 
 Expected Response:
+```
 {
   "total": 9,
   "courses": [
@@ -169,12 +172,13 @@ Expected Response:
   ],
   "error": null
 }
-
+```
 Example 4: Start Date Filtering and Pagination
 
 Request: curl "http://localhost:8080/api/search?category=Science&startDate=2025-07-01&page=1&size=3"
 
 Expected Response :
+```
 {
   "total": 6,
   "courses": [
@@ -194,7 +198,7 @@ Expected Response :
   ],
   "error": null
 }
-
+```
 🔍 Testing & Verification of Search Controller
 
      The application exposes a search API at: GET /api/search/suggest
@@ -203,12 +207,12 @@ Expected Response :
      Parameter:	              Description:
   1. q	                      Text for autocomplete(ex: Phy)
 
-
 Example : Text Autocomplete
 
 Request: curl "http://localhost:8080/api/search/suggest?q=Intro"
 
 Expected Response : 
+```
 [
     "Intro to Environmental Studies",
     "Introduction to Algebra",
@@ -219,22 +223,24 @@ Expected Response :
     "Introduction to Painting",
     "Introduction to Robotics"
 ]
-
+```
 Request: curl "http://localhost:8080/api/search/suggest?q=Robo"
 
 Expected Response :
+```
 [
     "Robotics Club",
     "Robotics One-Time Workshop"
 ]
-
+```
 Request: curl "http://localhost:8080/api/search/suggest?q=Phy"
 
 Expected Response :
+```
 [
     "Physics Fundamentals"
 ]
-
+```
 🔍 Testing & Verification of Fuzzy Functionality
 
      The application exposes a search API at: GET /api/search
@@ -256,6 +262,7 @@ Example : Fuzzy Text
 Request: curl "http://localhost:8080/api/search/?q=algbar"
 
 Expected Response :
+```
 {
     "total": 1,
     "courses": [
@@ -274,11 +281,12 @@ Expected Response :
     ],
     "error": null
 }
-
+```
 
 Request: curl "http://localhost:8080/api/search/?q=algbar"
 
 Expected Response :
+```
 {
     "total": 5,
     "courses": [
