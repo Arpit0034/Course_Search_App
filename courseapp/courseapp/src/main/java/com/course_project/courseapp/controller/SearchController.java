@@ -44,9 +44,15 @@ public class SearchController {
             }
         }
 
-        var result = courseSearchService.searchCourses(keyword, minAge, maxAge, category, type,
-                minPrice, maxPrice, startingDate, sort, page, size);
+        var result = courseSearchService.searchCourses(
+                keyword, minAge, maxAge,
+                category, type,
+                minPrice, maxPrice,
+                startingDate, sort, page, size
+        );
 
-        return ResponseEntity.ok(new SearchResponse(result.getTotalElements(), result.getContent()));
+        return ResponseEntity.ok(
+                new SearchResponse(result.getTotalElements(), result.getContent())
+        );
     }
 }
