@@ -86,6 +86,7 @@ A Spring Boot application with Elasticsearch integration to provide course searc
 
      Query Parameters
      Parameter:	              Description: 
+```
   1. q	                      Keyword for full-text search (title, description)
   2. minAge/maxAge	      Filter by age range
   3. category	              Filter by course category (e.g., Math, Science)
@@ -94,7 +95,7 @@ A Spring Boot application with Elasticsearch integration to provide course searc
   6. startDate	              Show courses on/after this date (ISO-8601 format)
   7. sort                     Sort by: upcoming (default), priceAsc, priceDesc
   8. page/size	              Pagination (page=0, size=10 by default)
-
+```
 Example 1: Full-text Search by Keyword
 
 Request: curl "http://localhost:8080/api/search?q=robotics"
@@ -205,8 +206,9 @@ Expected Response :
 
      Query Parameters
      Parameter:	              Description:
-  1. q	                      Text for autocomplete(ex: Phy)
-
+```
+  1. q	                      Text for AutoComplete(ex: Phy)
+```
 Example : Text Autocomplete
 
 Request: curl "http://localhost:8080/api/search/suggest?q=Intro"
@@ -247,7 +249,8 @@ Expected Response :
 
      Query Parameters
      Parameter:	              Description:
-  1. q	                      Keyword for fuzzy(title) or full-text search (title, description)
+```
+  1. q	                      Keyword for fuzzy (title) or full-text search (title, description)
   2. minAge/maxAge	      Filter by age range
   3. category	              Filter by course category (e.g., Math, Science)
   4. type	              Filter by type: ONE_TIME, COURSE, CLUB
@@ -255,7 +258,7 @@ Expected Response :
   6. startDate	              Show courses on/after this date (ISO-8601 format)
   7. sort                     Sort by: upcoming (default), priceAsc, priceDesc
   8. page/size	              Pagination (page=0, size=10 by default)
-
+```
 
 Example : Fuzzy Text
 
