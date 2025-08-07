@@ -286,7 +286,7 @@ Expected Response :
 }
 ```
 
-Request: curl "http://localhost:8080/api/search/?q=algbar"
+Request: curl "http://localhost:8080/api/search/?q=crative"
 
 Expected Response :
 ```
